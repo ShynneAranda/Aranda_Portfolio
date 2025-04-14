@@ -1,0 +1,593 @@
+/* ====== General Page Styling ====== */
+body {
+    height: 2370px; /* Ensures enough space for scrolling */
+    background: linear-gradient(to bottom, 
+        white 5%,    /* Less white at the top */
+        #6ee88a 30%, /* Light green appears sooner */
+        #9effbdc9 70%, /* Mid-green takes more space */
+        #55d176 100% /* Even darker green at the bottom */
+    );
+    background-size: 100% 200%; /* Smooth scrolling effect */
+    background-attachment: scroll; /* Moves while scrolling */
+    margin: 0; /* Removes default margin */
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 220px;
+    height: 100%;
+    background-color: #8eea9e; /* pastel green aesthetic */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+    padding-top: 60px;
+}
+.top-hover-zone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Increase this if needed */
+  z-index: 999;
+  pointer-events: auto;
+}
+
+
+  .top-bar {
+    transition: top 0.3s ease-in-out; /* smoother */
+}
+
+  
+
+.top-bar {
+        top: -60px; /* hide initially */
+      
+    position: fixed;
+    top: -60px; /* Hide it above view */
+    left: 0;
+    width: 100%;
+    transition: top 0.3s ease;
+    z-index: 1000;
+    background-color: #8eea9e;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    height: 50px;
+  }
+  
+  
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu ul li {
+    padding: 15px;
+    border-bottom: 1px solid #a2d5a3;
+}
+
+.side-menu ul li a {
+    text-decoration: none;
+    color: #2b5f2b;
+    font-weight: bold;
+    font-size: 20px;
+    display: block;
+}
+
+.side-menu ul li a:hover {
+    color: #ffff;
+}
+
+.side-menu.open {
+    left: 0;
+}
+
+.hamburger {
+    cursor: pointer;
+    font-size: 30px;
+    padding: 10px;
+    color: white;
+}
+
+.hamburger:hover {
+    color: #61ba70;
+}
+
+
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    min-height: 150vh;
+    padding: 50px 0;
+    gap: 30px;
+    background: url('doodle.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll;
+    margin-bottom: -100px;
+    margin-top: 203px;
+    
+    transform: translateY(90px);
+    
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    
+    z-index: 1100;
+
+}
+
+.skills-section,
+.experiences,
+.education {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 13px;
+  width: 60%;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.541);
+
+  /* This keeps them horizontally centered */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.experiences {
+  margin-top: -500px; /* keep your design choice */
+}
+
+.education {
+  margin-top: 50px;
+}
+
+
+.contact-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 1px;
+    width: 50%;
+    flex-wrap: wrap;
+    margin-left: 400px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.contact-row {
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the left without excessive space */
+    gap: 10px; /* Adjust the gap as needed to control spacing */
+    flex-wrap: nowrap; /* Prevent wrapping */
+
+    align-items: center;
+}
+
+.contact-details, .email, .address {
+    min-width: 100px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4f6d40;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.contacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: -70px;
+    color: white;
+
+    position: relative;
+    width: 94.5%;
+    bottom: 0;
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.contacts.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  text-align: center;
+}
+
+
+
+.contacts.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sksk
+{margin-bottom: 20px;}
+/* ====== Text & Heading Styling ====== */
+h2 { 
+    color: white; /* Dark green text */
+    font-size: 28px;
+    margin-bottom: 25px;
+    margin-top: 7px;
+    letter-spacing: 5px;
+
+    /* Add horizontal padding */
+    padding-left: 20px;
+    padding-right: 20px;
+
+    /* Optional: vertical padding too */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #3f7140;
+}
+
+.meet-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 700px;
+    background: transparent; /* Ensure background isn't covering stars */
+    z-index: 1;
+    margin-bottom: -100px;
+}
+
+  .stars-container {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    opacity: 0.9; /* Increase brightness */
+    animation: float 15s linear infinite; /* faster float */
+}
+/* Adjusting the skill title margin */
+.skill-title {
+    margin-top: 40px; /* Increase space above the title */
+    margin-bottom: 20px; /* Increase space below the title */
+    font-size: 1.2rem;
+    text-align: center; /* Center align titles */
+}
+
+/* Adding margin to skill groups for better separation */
+.skill-group {
+    text-align: center;
+    margin-bottom: 40px; /* Increase the space between skill groups */
+}
+
+/* Adjust icons-row to ensure proper spacing between icons */
+.icons-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Increased gap between icons */
+    flex-wrap: wrap;
+    margin-bottom: 30px; /* Space between icon rows */
+}
+
+/* Adjust image size for better consistency */
+.icons-row img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+
+  
+  
+  .star.blur {
+    filter: blur(3px); /* Reduce blur for sharper stars */
+    opacity: 0.8;
+  }
+  
+  .star.small {
+    width: 4px;
+    height: 4px;
+    opacity: 0.3;
+  }
+  
+  .star.medium {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .star.large {
+    width: 30px; /* Increase size of large stars */
+    height: 30px;
+    opacity: 0.2;
+  }
+  
+  .star:not(.small):not(.medium):not(.large) {
+    width: 12px;
+    height: 12px;
+  }
+  
+  /* Floating animation for movement */
+  @keyframes float {
+    0% {
+      transform: translateY(100%) scale(1);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100%) scale(1.2);
+      opacity: 0;
+    }
+  }
+  
+  .text-wrapper, .me {
+    position: relative;
+    z-index: 2;
+  }
+  
+
+h3 {
+    font-size: 20px;
+    color: #3d3d3d;
+    margin: 10px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+
+h1 {
+    font-size: 20px;
+    color: #bf7a0b;
+    margin: 10px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+
+/* Hamburger Icon */
+.hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #fff;
+}
+.catch,
+.meet {
+    font-style: oblique !important;
+}
+
+/* Domain Name */
+.dom-name {
+    font-size: 20px;
+    margin-left: 1250px;
+    color: white;
+}
+
+/* ====== Catchphrase Styling ====== */
+.catch {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 90px;
+    color: #61ba70;
+    margin: 20px 0;
+    text-align: right;
+    margin-right: 40px;
+    margin-top: 150px;
+    letter-spacing: -4px;
+}
+/* Container & Layout */
+.meet-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 130px;
+    flex-wrap: nowrap;
+    margin-top: 50px;
+    width: 100%;
+}
+
+/* Animation wrapper only */
+.text-wrapper {
+    display: inline-block;
+    animation: wave 4s ease-in-out infinite;
+    margin-left: 250px;
+    margin-bottom: 100px;
+    letter-spacing: -4px;
+    margin-top: -80px;
+}
+
+/* Text styling stays clean */
+.meet {
+    font-size: 70px;
+    margin: 0;
+    white-space: nowrap;
+    color: #b06400;
+    display: inline-block;
+    font-style: italic;
+    font-weight: bold;
+    /* Add this line to set the font */
+    font-family: "Playfair Display", serif;
+}
+
+  
+  .meet span {
+    display: inline-block;
+    animation: waveText 7s infinite ease-in-out;
+  }
+  
+  /* Delay each letter for wave effect */
+  .meet span:nth-child(1) { animation-delay: 0s; }
+  .meet span:nth-child(2) { animation-delay: 0.1s; }
+  .meet span:nth-child(3) { animation-delay: 0.2s; }
+  .meet span:nth-child(4) { animation-delay: 0.3s; }
+  .meet span:nth-child(6) { animation-delay: 0.4s; } /* skip space */
+  .meet span:nth-child(7) { animation-delay: 0.5s; }
+  .meet span:nth-child(8) { animation-delay: 0.6s; }
+  .meet span:nth-child(9) { animation-delay: 0.7s; }
+  .meet span:nth-child(10) { animation-delay: 0.8s; }
+  .meet span:nth-child(11) { animation-delay: 0.9s; }
+  
+  @keyframes waveText {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+  }
+  
+
+/* Arrow Styling */
+.arrow1 {
+    width: 50px;
+    margin-left: 740px;
+    margin-top: 250px;
+    height: auto;
+    filter: brightness(70%);
+}
+
+.arrow1:hover {
+filter: brightness(60%);
+}
+/* Meet Section Animation *//* Meet Container fades in faster */
+.meet-container {
+    opacity: 0;
+    transform: translateY(90px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .meet-container.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .skills-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .skills-section.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .skills-section {margin-top: 1-px ; }
+
+  
+  .experiences {
+    opacity: 0;
+    transform: translateY(70px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .experiences.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .me {
+    filter: drop-shadow(0 0 15px #bf7a0b); /* warm yellow glow */
+}
+
+  .education {
+    opacity: 0;
+    transform: translateY(75px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .education.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  
+  .about-me { 
+    opacity: 0;
+    transform: translateY(90px);
+    transition: opacity 1s ease-out 0.7s, transform 1s ease-out 0.7s;
+    /* More subtle delay */
+}
+
+.about-me.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+  
+/* ====== About Me Section ====== */
+.about-me {
+    margin-top: -400px;
+    margin-left: 250px;
+    text-align: justify;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #085e00d6;
+    line-height: 1.5;
+
+    font-size: 18px;}
+
+/* ====== Link Styling ====== */
+.link a {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4f6d40;
+    background-color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+.link a:hover {
+    background-color: #4f6d40;
+    color: white;
+}
+.link {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.link.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-row { 
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.contact-row.show { 
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Add general styling for the images */
+.icons-row img {
+  width: 50px;  /* Adjust size if needed */
+  height: auto;
+  transition: transform 0.3s ease;  /* Smooth zoom effect */
+}
+
+/* Add zoom effect on hover */
+.icons-row img:hover {
+  transform: scale(1.1);  /* Zoom in by 10% */
+}

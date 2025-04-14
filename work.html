@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Work</title>
+  <link rel="stylesheet" href="work.css" />
+  
+</head>
+<body>
+    
+    <div class="header">
+        <div class="stars-container">
+            <!-- Add more stars here for density -->
+            <div class="star blur"></div>
+            <div class="star"></div>
+            <div class="star blur small"></div>
+            <div class="star medium"></div>
+            <div class="star blur medium"></div>
+            <div class="star small"></div>
+            <div class="star large"></div> <!-- Add new size -->
+            <div class="star blur large"></div> <!-- Add new blur version -->
+            <!-- You can keep adding as needed -->
+          </div>
+        <h1 class="title">My Works</h1>
+        <a href="index.html" class="back-button">&#8592; Back</a>
+      </div>
+      
+  <div class="work-container">
+    <div class="slideshow">
+      <button class="nav left" onclick="prevSlide()">&#10094;</button>
+<!-- Modal for Full Image View -->
+<div class="modal" id="imageModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">×</span>
+      <img id="fullImage" src="" alt="Full View">
+    </div>
+  </div>
+  
+      <div class="slides-wrapper">
+        <div class="slide">
+          <img src="project1.jpg" alt="Project 1">
+          <div class="tap-to-view">Tap to View</div>
+        </div>
+        <div class="slide">
+          <img src="project2.jpg" alt="Project 2">
+          
+          <div class="tap-to-view">Tap to View</div>
+        </div>
+        <div class="slide">
+          <img src="project3.jpg" alt="Project 3">
+          
+          <div class="tap-to-view">Tap to View</div>
+        </div>
+        <div class="slide">
+          <img src="project4.jpg" alt="Project 4">
+          
+          <div class="tap-to-view">Tap to View</div>
+        </div>
+        <div class="slide">
+          <img src="project5.jpg" alt="Project 5">
+          
+          <div class="tap-to-view">Tap to View</div>
+        </div>
+        <div class="slide">
+          <img src="project6.jpg" alt="Project 6">
+          
+          <div class="tap-to-view">Tap to View</div>
+        </div>
+        <div class="slide">
+          <img src="project7.jpg" alt="Project 7">
+          
+          <div class="tap-to-view">Tap to View</div>
+        </div>
+        <div class="slide">
+          <img src="project8.jpg" alt="Project 8">
+          
+          <div class="tap-to-view">Tap to View</div>
+        </div>
+      </div>
+
+      <button class="nav right" onclick="nextSlide()">&#10095;</button>
+    </div>
+  </div>
+
+  <script src="work.js"></script>
+</body>
+</html>

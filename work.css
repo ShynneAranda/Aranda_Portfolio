@@ -1,0 +1,242 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle, #aef4c2 0%, #6ee88a 40%, #4ac16f 80%, #2a8c50 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevent scrollbars */
+}.star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  opacity: 20%; /* Brightness for stars */
+  animation: float 15s linear infinite;
+  width: 15px;
+  height: 15px;
+}
+
+.star.small {
+  width: 20px;
+  height: 20px;
+  opacity: 60%;
+}
+
+.star.medium {
+  width: 25px;
+  height: 25px;
+  opacity: 40%;
+}
+
+.star.large {
+  width: 140px;
+  height: 140px;
+  filter: blur(8px);
+  opacity: 17%;
+}
+
+.star.blur {
+  filter: blur(6px);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.2);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+.stars-container {
+  position: absolute;
+  inset: 0;
+  z-index: -2; /* Put stars behind everything else */
+  pointer-events: none;
+  width: 100vw;  /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  top: 0;
+  left: 0;
+}
+
+/* Work Container */
+.work-container {
+  width: 80%;
+  overflow: hidden;
+  height: 100%;
+  z-index: 1
+}
+
+/* Slideshow */
+.slideshow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; 
+}
+.modal,
+.nav {
+  z-index: 3;
+}
+.slides-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  background: rgba(255, 255, 255, 0.12); /* Glassy background */
+  backdrop-filter: blur(30px) brightness(110%) opacity(70%); /* Glassy effect */
+  -webkit-backdrop-filter: blur(20px) saturate(160%); /* Safari compatibility */
+  border-radius: 25px; /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Soft border */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25); /* Floating effect */
+  padding: 20px;
+  opacity: 0.6; /* Transparent for the glass effect */
+  transform: scale(0.85); /* Slight zoom-out effect */
+  flex-shrink: 0;
+  max-width: 350px;
+  margin: 0 10px;
+  height: 500px; /* Increased height for bigger slides */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none; /* Disable when not active */
+  margin-top: 100px;
+}
+
+.slide.active {
+  opacity: 1; /* Full opacity for active slide */
+  transform: scale(1.15); /* Slight zoom effect */
+  z-index: 1;
+  pointer-events: all; /* Enable interaction for active slide */
+}
+
+.slide img {
+  width: 100%; /* Fill the container */
+  height: 100%; /* Ensure full height */
+  object-fit: cover; /* Ensure the image fills the space properly */
+  border-radius: 15px;
+  object-position: center; /* Keep image centered */
+}
+
+/* Navigation Buttons */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: background-color 0.2s ease;
+}
+
+.nav.left {
+  left: 0;
+}
+
+.nav.right {
+  right: 0;
+}
+
+.nav:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Modal Styles for Full Image */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+  z-index: 3; /* Ensures the modal is on top */
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+#fullImage {
+  width: auto;
+  height: 650px;
+  object-fit: contain;
+}
+
+/* Header Styles */
+.header {
+  position: absolute;
+  top: 20px; /* Position from the top */
+  left: 20px; /* Position from the left */
+  color: white; /* White text */
+  z-index: 1; /* Ensure it's above background */
+}
+
+.title {
+  font-family: 'Playfair Display', serif; /* Playfair Display font */
+  font-weight: bold; /* Bold font */
+  font-size: 36px; /* Adjust as needed */
+  margin: 0;
+  text-shadow: 0px 0px 7px #14572e;
+}.tap-to-view {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #ffffffcc; /* Soft white */
+  background-color: transparent; /* No background to avoid looking like a button */
+  padding: 0;
+  border-radius: 0;
+  pointer-events: none; /* Prevents it from interfering with clicks */
+  font-style: italic;
+  text-shadow: 1px 1px 4px #00000080; /* Slight glow for readability */
+}
+
+/* Back Button Styles */
+.back-button {
+  display: block;
+  margin-top: 10px; /* Space between title and back button */
+  font-size: 20px;
+  text-decoration: none; /* Remove underline */
+  color: white; /* White color for the back button */
+  text-shadow:0px 0px 7px  #14572e;
+}
+
+.back-button:hover {
+  color: #ffaf54; /* Lighten color on hover */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
